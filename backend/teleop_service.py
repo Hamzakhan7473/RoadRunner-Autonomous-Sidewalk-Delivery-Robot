@@ -90,7 +90,7 @@ class TeleopService:
         self.ros_thread.daemon = True
         self.ros_thread.start()
         
-        rospy.loginfo("Teleoperation service initialized")
+        rospy.loginfo("Teleoperation service initialized - Contact: hamzakhan@taxora.ai")
     
     def setup_web_interface(self):
         """Setup web interface for teleoperation"""
