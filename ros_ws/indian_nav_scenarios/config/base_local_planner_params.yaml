@@ -1,0 +1,62 @@
+# Base local planner parameters optimized for Indian urban environments
+TrajectoryPlannerROS:
+  # Indian-specific navigation parameters
+  
+  # Speed limits for crowded environments
+  max_vel_x: 0.5
+  min_vel_x: 0.1
+  max_vel_theta: 0.5
+  min_vel_theta: 0.1
+  
+  # Acceleration limits for safety
+  acc_lim_x: 0.3
+  acc_lim_theta: 0.5
+  
+  # Path planning parameters
+  path_distance_bias: 64.0
+  goal_distance_bias: 24.0
+  occdist_scale: 0.5
+  
+  # Social navigation parameters
+  social_navigation:
+    enabled: true
+    # Respect personal space
+    personal_space_radius: 1.0
+    # Yield to pedestrians
+    yield_to_pedestrians: true
+    # Slower speeds near people
+    pedestrian_speed_factor: 0.5
+    # Polite navigation
+    polite_navigation: true
+  
+  # Obstacle avoidance
+  obstacle_range: 2.5
+  raytrace_range: 3.0
+  inflation_radius: 0.55
+  
+  # Path smoothing for uneven surfaces
+  path_smoothing:
+    enabled: true
+    smoothing_factor: 0.1
+  
+  # Recovery behaviors for difficult situations
+  recovery_behaviors:
+    - {name: conservative_reset, type: "conservative_reset"}
+    - {name: aggressive_reset, type: "aggressive_reset"}
+    - {name: rotate_recovery, type: "rotate_recovery"}
+  
+  # Indian-specific recovery
+  conservative_reset:
+    enabled: true
+    # Longer timeout for crowded areas
+    sim_time: 2.0
+    # More conservative path planning
+    conservative_factor: 1.5
+  
+  # Teleoperation fallback
+  teleop_fallback:
+    enabled: true
+    # Automatic handoff to human operator
+    auto_handoff: true
+    # Handoff threshold (difficulty score)
+    handoff_threshold: 0.8

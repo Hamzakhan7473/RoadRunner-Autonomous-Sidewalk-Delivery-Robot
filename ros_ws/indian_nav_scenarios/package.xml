@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>indian_nav_scenarios</name>
+  <version>1.0.0</version>
+  <description>Gazebo simulation worlds for Indian urban environments</description>
+
+  <maintainer email="your-email@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_control</depend>
+  <depend>gazebo_plugins</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>map_server</depend>
+  <depend>amcl</depend>
+  <depend>move_base</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <export>
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
+  </export>
+</package>
